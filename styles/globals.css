@@ -3,7 +3,9 @@
   --bg-color: hsla(36, 100%, 74%, .7);
 }
 
-html {}
+html {
+  color-scheme: only-light;
+}
 
 body {
   padding: 0;
@@ -27,4 +29,9 @@ body {
 .app {
   position: absolute;
   z-index: 1;
+  /* padding: 0 .5rem; */
+}
+
+.app-body {
+  padding: 0 .5rem;
 }
