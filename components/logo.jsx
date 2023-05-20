@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Icon_Tomato from '@assets/icons/tomato.png'
 import style from '@styles/logo.module.css'
 
-export default ({ scale }) => {
+export const logo =  ({ scale }) => {
 
 
   return (
@@ -17,3 +17,5 @@ export default ({ scale }) => {
     </div>
   )
 }
+
+export default logo
