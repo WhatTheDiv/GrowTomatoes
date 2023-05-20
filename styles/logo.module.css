@@ -1,0 +1,14 @@
+.container {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.image {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.name {
+  margin: 0;
+  display: inline-block;
+}

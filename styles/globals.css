@@ -1,0 +1,30 @@
+:root {
+  --bg-dark: hsla(0, 0%, 0%, .7);
+  --bg-color: hsla(36, 100%, 74%, .7);
+}
+
+html {}
+
+body {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.main {
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.main-background {
+  width: 100%;
+  background-image: linear-gradient(to top left, var(--bg-dark), var(--bg-color));
+}
+
+.app {
+  position: absolute;
+  z-index: 1;
+}
