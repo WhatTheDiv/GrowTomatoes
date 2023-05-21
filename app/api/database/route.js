@@ -1,19 +1,13 @@
-import { PrismaClient } from '@prisma/client'
+// import { PrismaClient } from '@prisma/client'
+import { db } from "@vercel/postgres";
 
 export const POST = async (request, { params }) => {
   const body = await request.json()
-  const prisma = new PrismaClient()
-  const product = await prisma.product.create({
-    data: { ...body.product }, select: {
-      name: true,
-      description: true,
-      price: true
-    }
-  })
-  const products = await prisma.product.findMany()
 
-  prisma.$disconnect()
-  return new Response(JSON.stringify({ products, product: product || null }), { status: 200 })
+  // const res = await createWithPrisma(body.product)
+  const res = await createWithVercel(body.product)
+
+  return new Response(JSON.stringify({ products: res.products, product: res.product }), { status: 200 })
 
 }
 
@@ -32,5 +26,39 @@ export const DELETE = async (request, { params }) => {
     product: product ? product : null,
     message: 'Product deleted',
   }), { status: 200 })
+}
+
+async function createWithPrisma(product_raw) {
+  const prisma = new PrismaClient()
+
+  const product = await prisma.product.create({
+    data: { ...product_raw }, select: {
+      name: true,
+      description: true,
+      price: true
+    }
+  })
+  const products = await prisma.product.findMany()
+
+  prisma.$disconnect()
+
+  return {
+    products,
+    product
+  }
+}
+async function createWithVercel(product_raw) {
+  const client = await db.connect()
+
+  try {
+    // await client.sql`CREATE TABLE Products ( name varchar(255), description varchar(255), price varchar(255) )`
+    await client.sql`INSERT INTO Products (name, description, price) VALUES (${product_raw.name},${product_raw.description},${product_raw.price})`
+  } catch (e) {
+    console.log('there was an error', e)
+    return { products: null, product: null }
+  }
+
+  const products = await client.sql`SELECT * FROM Products`
+  return { product: null, products }
 }
 
