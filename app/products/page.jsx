@@ -1,6 +1,20 @@
 
 
 const Products = async () => {
+  async function getProducts() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+    const data = await fetch('http://localhost:3000/api/database', options)
+    // console.log('data: ', data)
+    const res = await data.json()
+
+
+    return res.products
+  }
 
   const products = await getProducts()
 
@@ -20,20 +34,6 @@ const Products = async () => {
       </ul>
     </div>
   )
-}
-async function getProducts() {
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }
-  const data = await fetch('http://localhost:3000/api/database', options)
-  // console.log('data: ', data)
-  const res = await data.json()
-
-
-  return res.products
 }
 
 
