@@ -1,6 +1,6 @@
 'use client'
 import style from '@styles/addProducts.module.css'
-import { useState, use } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 
 
