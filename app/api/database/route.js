@@ -11,6 +11,12 @@ export const POST = async (request, { params }) => {
 
 }
 
+export const GET = (async (request) => {
+  const res = await getWithVercel()
+  return new Response(JSON.stringify({ products: res }), { status: 200 })
+
+})
+
 export const DELETE = async (request, { params }) => {
   const body = await request.JSON()
   const prisma = new PrismaClient()
@@ -60,5 +66,15 @@ async function createWithVercel(product_raw) {
 
   const products = await client.sql`SELECT * FROM Products`
   return { product: null, products }
+}
+async function getWithVercel() {
+  const client = await db.connect()
+  try {
+    const products = await client.sql`SELECT * FROM  Products`
+    console.log('succesfully retrieved with vercel')
+    return products.rows
+  } catch (e) {
+    console.log('failed to query database with vercel')
+  }
 }
 
