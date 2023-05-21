@@ -1,24 +1,7 @@
 
 
 const Products = async () => {
-  async function getProducts() {
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }
-    const data = await fetch('http://localhost:3000/api/database', options)
-    // console.log('data: ', data)
-    const res = await data.json()
-    console.log('res', res.products)
-
-    // if (res.length >= 1) {
-    //   console.log('good data')
-    // }
-
-    return res.products
-  }
+  
   const products = await getProducts()
 
   return (
@@ -38,7 +21,20 @@ const Products = async () => {
     </div>
   )
 }
+async function getProducts() {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  const data = await fetch('http://localhost:3000/api/database', options)
+  // console.log('data: ', data)
+  const res = await data.json()
 
+
+  return res.products
+}
 
 
 export default Products
