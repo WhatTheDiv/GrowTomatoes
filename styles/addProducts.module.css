@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* background: green; */
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.container>p {
+  font-size: 1rem;
+}
+
+.container fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 0; */
+  margin: 0;
+  border-radius: .5rem;
+  border: 1px solid var(--bg-dark);
+  box-sizing: border-box;
+  /* max-width: 100%; */
+  overflow: scroll;
+}
+
+.container legend {
+  text-align: left;
+  padding: 0 .5rem;
+  margin: 0 1rem;
+  background: inherit;
+  font-size: .5em;
+}
+
+.container>fieldset>textarea {
+  height: 2rem;
+  resize: vertical;
+}
+
+.formFile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* background: blue; */
+  max-width: 100%;
+  /* overflow: scroll; */
+}
+
+.formFile label {
+  height: 2.5rem;
+  margin-top: .5rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.container img {
+  /* flex-grow: 1; */
+  margin: .5rem;
+  border-radius: .5rem;
+}
+
+
+
+.container>fieldset>input,
+.container>fieldset>textarea {
+  /* flex: 1; */
+  width: 100%;
+  background: inherit;
+  /* background: red; */
+  outline: none;
+  border: none;
+  padding: 5px 1rem;
+  margin: 0;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+}
+
+.formPrice input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  width: 10rem;
+}
+
+.container>input {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  border: none;
+  font-weight: bolder;
+  color: var(--bg-dark);
+  letter-spacing: 4px;
+}

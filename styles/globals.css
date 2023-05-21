@@ -13,6 +13,21 @@ body {
   position: relative;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .main {
   position: fixed;
   display: flex;
@@ -29,9 +44,13 @@ body {
 .app {
   position: absolute;
   z-index: 1;
+  height: 100%;
+  max-width: 100%;
+
   /* padding: 0 .5rem; */
 }
 
 .app-body {
   padding: 0 .5rem;
+
 }
