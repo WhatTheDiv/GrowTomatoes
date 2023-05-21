@@ -8,7 +8,7 @@ import Image from 'next/image'
 const addProducts = () => {
   const [image, setImage] = useState(false)
   return (
-    <form className={style.container} onSubmit={submitNewProduct}>
+    <form className={style.container} onSubmit={(event) => submitNewProduct(event,image)}>
       <p>Add Products</p>
       <fieldset>
         <label htmlFor="addProduct_name"></label>
@@ -67,9 +67,15 @@ const addProducts = () => {
   )
 }
 
-async function submitNewProduct(e) {
+async function submitNewProduct(e, i) {
   e.preventDefault();
-  const [name, description, price, Image] = e.target.querySelectorAll('input')
+  const inputs = e.target.querySelectorAll('input, textarea')
+  const [n, d, p] = inputs
+  const name = n.value ? n.value : 'Test_name'
+  const description = d.value ? d.value : 'test description'
+  const price = p.value ? Number(p.value).toFixed(2) : '11.11'
+  const image = i
+
   const options = {
     method: "POST",
     headers: {
@@ -79,7 +85,8 @@ async function submitNewProduct(e) {
       product: {
         name,
         description,
-        price
+        price,
+        image
       }
     })
 
