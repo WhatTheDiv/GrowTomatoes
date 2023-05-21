@@ -1,7 +1,7 @@
 
 
 const Products = async () => {
-  
+
   const products = await getProducts()
 
   return (
@@ -10,7 +10,7 @@ const Products = async () => {
       <ul>
         {products.map((item, index) => {
           return (
-            <li>
+            <li key={index}>
               <span>{item.name} </span>
               <span>{item.price} </span>
               <span>{item.description} </span>
