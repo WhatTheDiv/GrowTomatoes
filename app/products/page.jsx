@@ -16,7 +16,7 @@ const Products = async () => {
 
     // return res.products
     console.log(data)
-    return null
+    return []
   }
 
   const products = await getProducts()
