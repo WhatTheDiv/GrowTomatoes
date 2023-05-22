@@ -12,8 +12,9 @@ export const POST = async (request, { params }) => {
 }
 
 export const GET = (async (request) => {
-  const res = await getWithVercel()
-  return new Response(JSON.stringify({ products: res }), { status: 200 })
+  const res = await getWithVercel();
+  console.log('res: ', res)
+  // return new Response(JSON.stringify({ products: res }), { status: 200 })
 
 })
 
