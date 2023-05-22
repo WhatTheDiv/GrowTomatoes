@@ -26,7 +26,7 @@ const Products = async () => {
     <div>
       <h1>Product List</h1>
       <ul>
-        {/* {products.map((item, index) => {
+        {products.map((item, index) => {
           return (
             <li key={index}>
               <span>{item.name} </span>
@@ -34,7 +34,7 @@ const Products = async () => {
               <span>{item.description} </span>
             </li>
           )
-        })} */}
+        })}
       </ul>
     </div>
   )
