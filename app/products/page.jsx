@@ -8,7 +8,7 @@ const Products = async () => {
         "Content-Type": "application/json"
       }
     }
-    const data = await fetch('http://localhost:3000/api/database', options)
+    const data = await fetch(process.env.SERVER_HOST+'/api/database', options)
     // console.log('data: ', data)
     const res = await data.json()
 
@@ -35,6 +35,9 @@ const Products = async () => {
     </div>
   )
 }
+
+
+
 
 
 export default Products
