@@ -18,6 +18,7 @@ const Products = async () => {
   }
 
   const products = await getProducts()
+  console.log('products: ', products)
 
   return (
     <div>
