@@ -10,6 +10,7 @@ const Products = async () => {
     }
     const url = process.env.SERVER_HOST + '/api/database'
     const data = await fetch(url, options)
+    console.log('status: ', data.status)
     // console.log('data: ', data)
     // const res = await data.json()
 
