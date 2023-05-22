@@ -8,7 +8,8 @@ const Products = async () => {
         "Content-Type": "application/json"
       }
     }
-    const data = await fetch(process.env.SERVER_HOST+'/api/database', options)
+    const url = process.env.SERVER_HOST + '/api/database'
+    const data = await fetch(url, options)
     // console.log('data: ', data)
     const res = await data.json()
 
