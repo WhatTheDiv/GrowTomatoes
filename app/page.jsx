@@ -7,7 +7,7 @@ const Home = () => {
     <div className={style.container}>
       <p className={style.bodyDescrip}>The one stop shop for all your your growing needs</p>
       <div className={style.bodyNav}>
-        <Link href='/products'>View Products</Link>
+        <Link href='/products'>View Productss</Link>
         <input
           type="button"
           value="Search"
