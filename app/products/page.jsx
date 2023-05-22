@@ -11,10 +11,12 @@ const Products = async () => {
     const url = process.env.SERVER_HOST + '/api/database'
     const data = await fetch(url, options)
     // console.log('data: ', data)
-    const res = await data.json()
+    // const res = await data.json()
 
 
-    return res.products
+    // return res.products
+    console.log(data)
+    return null
   }
 
   const products = await getProducts()
