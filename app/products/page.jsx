@@ -8,19 +8,19 @@ const Products = async () => {
         "Content-Type": "application/json"
       }
     }
-    console.log('checkpoint')
     const url = process.env.SERVER_HOST + '/api/database'
     const data = await fetch(url, options)
     console.log('status: ', data.status)
     console.log('data: ', data)
     // const res = await data.json()
-
-
+    
+    
     // return res.products
     console.log(data)
     return []
   }
-
+  
+  console.log('checkpoint')
   const products = await getProducts()
   console.log('products: ', products)
 
