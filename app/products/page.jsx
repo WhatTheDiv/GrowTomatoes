@@ -9,21 +9,14 @@ const Products = async () => {
       }
     }
     const url = process.env.SERVER_HOST + '/api/database'
-    console.log('url: ', url)
     const data = await fetch(url, options)
-    console.log('status: ', data.status)
-    console.log('data: ', data)
     const res = await data.json()
 
 
     return res.products
-    console.log(data)
-    return []
   }
 
-  console.log('checkpoint')
   const products = await getProducts()
-  console.log('products: ', products)
 
   return (
     <div>

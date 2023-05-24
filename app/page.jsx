@@ -2,7 +2,9 @@ import Link from 'next/link'
 import style from '@styles/home.module.css'
 
 const Home = () => {
-  console.log('heartbeat')
+  console.log(' -------------------')
+  console.log('  *  Heartbeat   * ')
+  console.log(' -------------------')
   return (
     <div className={style.container}>
       <p className={style.bodyDescrip}>The one stop shop for all your your growing needs</p>
