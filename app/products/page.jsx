@@ -13,10 +13,10 @@ const Products = async () => {
     const data = await fetch(url, options)
     console.log('status: ', data.status)
     console.log('data: ', data)
-    // const res = await data.json()
+    const res = await data.json()
 
 
-    // return res.products
+    return res.products
     console.log(data)
     return []
   }
