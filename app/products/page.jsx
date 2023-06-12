@@ -12,7 +12,7 @@ const Products = async () => {
         {
           products.map((product, index) => {
             return (
-              <li><Product key={product.id} product={product} /></li>
+              <li key={product.id}><Product product={product} /></li>
             )
           })
         }
