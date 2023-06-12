@@ -1,17 +1,32 @@
-.container {
+.formContainer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* background: green; */
   padding: 0 1rem;
+  padding-bottom: 1rem;
   gap: 1rem;
 }
 
-.container>p {
+.adminActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adminActions>select {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  width: 150px;
+  background: inherit;
+  border: none;
+  outline: none;
+}
+
+.adminActions>option {
   font-size: 1rem;
 }
 
-.container fieldset {
+.formContainer fieldset {
   display: flex;
   flex-wrap: wrap;
   /* padding: 0; */
@@ -23,7 +38,7 @@
   overflow: scroll;
 }
 
-.container legend {
+.formContainer legend {
   text-align: left;
   padding: 0 .5rem;
   margin: 0 1rem;
@@ -31,13 +46,12 @@
   font-size: .5em;
 }
 
-.container>fieldset>textarea {
+.formContainer>fieldset>textarea {
   height: 2rem;
   resize: vertical;
 }
 
 .formFile {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   /* background: blue; */
@@ -46,13 +60,15 @@
 }
 
 .formFile label {
+  flex: 1;
+  align-self: center;
   height: 2.5rem;
   margin-top: .5rem;
   margin-left: 1rem;
   font-size: 1.5rem;
 }
 
-.container img {
+.formContainer img {
   /* flex-grow: 1; */
   margin: .5rem;
   border-radius: .5rem;
@@ -60,8 +76,8 @@
 
 
 
-.container>fieldset>input,
-.container>fieldset>textarea {
+.formContainer>fieldset>input,
+.formContainer>fieldset>textarea {
   /* flex: 1; */
   width: 100%;
   background: inherit;
@@ -82,7 +98,7 @@
   width: 10rem;
 }
 
-.container>input {
+.formContainer>input {
   width: 100%;
   padding: 1rem 0;
   font-size: 1.5rem;
